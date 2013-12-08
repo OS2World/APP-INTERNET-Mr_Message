@@ -1,0 +1,124 @@
+!define BLANK ""
+F:\OPENWATCOM\programs\MrMessage\md5.obj : F:\OPENWATCOM\programs\MrMessage\&
+md5.c .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wcc386 md5.c -i=F:\openwatcom\h;F:\openwatcom\h\os2 -w4 -e25 -zq -od -d2 -&
+5r -bt=os2 -mf
+
+F:\OPENWATCOM\programs\MrMessage\buddy.obj : F:\OPENWATCOM\programs\MrMessag&
+e\buddy.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 buddy.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of -ob -ol &
+-ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=os2 -mf
+
+F:\OPENWATCOM\programs\MrMessage\compatibility.obj : F:\OPENWATCOM\programs\&
+MrMessage\compatibility.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 compatibility.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of &
+-ob -ol -ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=o&
+s2 -mf
+
+F:\OPENWATCOM\programs\MrMessage\errors.obj : F:\OPENWATCOM\programs\MrMessa&
+ge\errors.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 errors.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of -ob -ol&
+ -ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=os2 -mf
+
+F:\OPENWATCOM\programs\MrMessage\mrmessage.obj : F:\OPENWATCOM\programs\MrMe&
+ssage\mrmessage.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 mrmessage.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of -ob &
+-ol -ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=os2 -&
+mf
+
+F:\OPENWATCOM\programs\MrMessage\oscardata.obj : F:\OPENWATCOM\programs\MrMe&
+ssage\oscardata.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 oscardata.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of -ob &
+-ol -ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=os2 -&
+mf
+
+F:\OPENWATCOM\programs\MrMessage\oscarprotocol.obj : F:\OPENWATCOM\programs\&
+MrMessage\oscarprotocol.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 oscarprotocol.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of &
+-ob -ol -ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=o&
+s2 -mf
+
+F:\OPENWATCOM\programs\MrMessage\oscarrx.obj : F:\OPENWATCOM\programs\MrMess&
+age\oscarrx.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 oscarrx.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of -ob -o&
+l -ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=os2 -mf
+
+F:\OPENWATCOM\programs\MrMessage\oscarsession.obj : F:\OPENWATCOM\programs\M&
+rMessage\oscarsession.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 oscarsession.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of -&
+ob -ol -ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=os&
+2 -mf
+
+F:\OPENWATCOM\programs\MrMessage\oscartx.obj : F:\OPENWATCOM\programs\MrMess&
+age\oscartx.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 oscartx.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of -ob -o&
+l -ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=os2 -mf
+
+F:\OPENWATCOM\programs\MrMessage\sessionmanager.obj : F:\OPENWATCOM\programs&
+\MrMessage\sessionmanager.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 sessionmanager.cpp -i=f:\os2toolkit\h -w4 -e25 -sg -zp1 -otexan -of&
+ -ob -ol -ol+ -om -oc -oi -oa -or -d2 -hw -bm -fp5 -fpi87 -zff -zgf -5r -bt=&
+os2 -mf
+
+F:\OPENWATCOM\programs\MrMessage\baseexe.res : F:\OPENWATCOM\programs\MrMess&
+age\baseexe.rc .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ rc -i $[: -i F:\openwatcom\h -i F:\openwatcom\h\os2 -r baseexe.rc baseexe.r&
+es
+
+F:\OPENWATCOM\programs\MrMessage\mrmessage.exe : F:\OPENWATCOM\programs\MrMe&
+ssage\md5.obj F:\OPENWATCOM\programs\MrMessage\buddy.obj F:\OPENWATCOM\progr&
+ams\MrMessage\compatibility.obj F:\OPENWATCOM\programs\MrMessage\errors.obj &
+F:\OPENWATCOM\programs\MrMessage\mrmessage.obj F:\OPENWATCOM\programs\MrMess&
+age\oscardata.obj F:\OPENWATCOM\programs\MrMessage\oscarprotocol.obj F:\OPEN&
+WATCOM\programs\MrMessage\oscarrx.obj F:\OPENWATCOM\programs\MrMessage\oscar&
+session.obj F:\OPENWATCOM\programs\MrMessage\oscartx.obj F:\OPENWATCOM\progr&
+ams\MrMessage\sessionmanager.obj F:\OPENWATCOM\programs\MrMessage\ACLCtl10.D&
+LL F:\OPENWATCOM\programs\MrMessage\mrmsggui.dll F:\OPENWATCOM\programs\MrMe&
+ssage\ACLCtl10.h F:\OPENWATCOM\programs\MrMessage\buddy.h F:\OPENWATCOM\prog&
+rams\MrMessage\compatibility.h F:\OPENWATCOM\programs\MrMessage\errors.h F:\&
+OPENWATCOM\programs\MrMessage\md5.h F:\OPENWATCOM\programs\MrMessage\oscarda&
+ta.h F:\OPENWATCOM\programs\MrMessage\oscarprotocol.h F:\OPENWATCOM\programs&
+\MrMessage\oscarsession.h F:\OPENWATCOM\programs\MrMessage\resource.h F:\OPE&
+NWATCOM\programs\MrMessage\sessionmanager.h F:\OPENWATCOM\programs\MrMessage&
+\baseexe.res .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ @%write mrmessage.lk1 FIL md5.obj,buddy.obj,compatibility.obj,errors.obj,mr&
+message.obj,oscardata.obj,oscarprotocol.obj,oscarrx.obj,oscarsession.obj,osc&
+artx.obj,sessionmanager.obj
+ @%append mrmessage.lk1 
+!ifneq BLANK "ACLCtl10.DLL mrmsggui.dll"
+ *wlib -q -n -b mrmessage.imp ACLCtl10.DLL mrmsggui.dll
+ @%append mrmessage.lk1 LIBR mrmessage.imp
+!endif
+ *wlink name mrmessage SYS os2v2 pm op m libp f:\os2toolkit\lib libr TCP32DL&
+L.LIB,SO32DLL.LIB op v op maxe=25 op symf op el @mrmessage.lk1
+!ifneq BLANK "baseexe.res"
+ rc -i $[: -i F:\openwatcom\h -i F:\openwatcom\h\os2 baseexe.res mrmessage.e&
+xe
+!endif
+

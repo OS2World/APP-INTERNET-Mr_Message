@@ -1,0 +1,35 @@
+!define BLANK ""
+F:\OPENWATCOM\programs\MrMessage\getmodule.obj : F:\OPENWATCOM\programs\MrMe&
+ssage\getmodule.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 getmodule.cpp -i=F:\openwatcom\h;F:\openwatcom\h\os2 -w4 -e25 -otex&
+an -of -ob -ol -ol+ -om -oc -oi -oa -or -bd -bm -fp5 -fpi87 -zff -zgf -5r -b&
+t=os2 -mf -wx
+
+F:\OPENWATCOM\programs\MrMessage\mrmessage.res : F:\OPENWATCOM\programs\MrMe&
+ssage\mrmessage.rc .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ rc -i $[: -i F:\openwatcom\h -i F:\openwatcom\h\os2 -r mrmessage.rc mrmessa&
+ge.res
+
+F:\OPENWATCOM\programs\MrMessage\mrmsggui.dll : F:\OPENWATCOM\programs\MrMes&
+sage\getmodule.obj F:\OPENWATCOM\programs\MrMessage\resource.h F:\OPENWATCOM&
+\programs\MrMessage\mrmessage.res .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ @%write mrmsggui.lk1 FIL getmodule.obj
+ @%append mrmsggui.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b mrmsggui.imp 
+ @%append mrmsggui.lk1 LIBR mrmsggui.imp
+!endif
+ *wlink name mrmsggui d all SYS os2v2 dll initi termi op m op maxe=25 op q o&
+p symf op many @mrmsggui.lk1
+!ifneq BLANK "mrmessage.res"
+ rc -i $[: -i F:\openwatcom\h -i F:\openwatcom\h\os2 mrmessage.res mrmsggui.&
+dll
+!endif
+ wlib -n -b mrmsggui.lib +mrmsggui.dll
+

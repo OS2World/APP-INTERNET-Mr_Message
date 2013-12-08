@@ -1,0 +1,25 @@
+!define BLANK ""
+F:\OPENWATCOM\programs\MrMessage\acltest.obj : F:\OPENWATCOM\programs\MrMess&
+age\acltest.cpp .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ *wpp386 acltest.cpp -i=F:\openwatcom\h;F:\openwatcom\h\os2 -w4 -e25 -zq -ot&
+exan -of -bm -fp5 -zff -zgf -5r -bt=os2 -mf -wx
+
+F:\OPENWATCOM\programs\MrMessage\acltest.exe : F:\OPENWATCOM\programs\MrMess&
+age\acltest.obj F:\OPENWATCOM\programs\MrMessage\ACLCtl10.DLL F:\OPENWATCOM\&
+programs\MrMessage\aclctl10.h .AUTODEPEND
+ @F:
+ cd F:\OPENWATCOM\programs\MrMessage
+ @%write acltest.lk1 FIL acltest.obj
+ @%append acltest.lk1 
+!ifneq BLANK "ACLCtl10.DLL"
+ *wlib -q -n -b acltest.imp ACLCtl10.DLL
+ @%append acltest.lk1 LIBR acltest.imp
+!endif
+ *wlink name acltest SYS os2v2 pm op m op v op nocase op maxe=25 op symf @ac&
+ltest.lk1
+!ifneq BLANK ""
+ rc -i $[: -i F:\openwatcom\h -i F:\openwatcom\h\os2  acltest.exe
+!endif
+

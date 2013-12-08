@@ -1,0 +1,251 @@
+Mr. Message for OS/2
+====================
+Documentation updated 2/19/2006.
+
+
+Purpose:
+Mr. Message for OS/2 is an instant messenger client which is capable of
+communicating over AOL's Instant Messenger network using the OSCAR protocol
+(used in the Win32 AIM clients, jBuddy, gAIM, Kopete, ICQ, and a variety of
+other clients).
+
+This project is currently still under heavy active development.  While
+usable functionality is already in place, due to the frequency of large code
+changes, I would not recommend using this for the faint of heart.
+
+
+New/fixed for this release:
+* Fixed receiving instant messages from other clients.
+  Damn protocol changes!
+* Fixed a small memory leak when an IM is received that is not understood.
+* Added new scriptable events for pre-processing and post-processing
+  instant messages.  This should allow anyone to write a translator for
+  other languages and character sets.  See ReadMe.REXX for details.
+* Added new functions to the REXX subcommand interface to display messages
+  in the chat window (without sending them to a user), and to get a user's
+  alias.
+* Included more sample scripts in the REXX package to demonstrate new
+  REXX integration features.
+
+  
+Limitations / known bugs:
+* Cannot create a new user ID and register it on the AOL network.
+* Cannot change your password on the AOL network.
+* Cannot change the buddy list stored on the AOL servers at this time.
+* Cannot permanently remove someone from your buddy list yet.
+* Right-clicking the received IM window will pop up a menu in the
+  bottom left corner of the screen instead of at the mouse location.
+* New ICQ users will not be able to log in without first using another
+  ICQ client to connect and initialize the account.  After using
+  another ICQ client, Mr. Message should work.
+
+
+Currently supported features:
+* Sound clips tied to IM events (any audio format supported by
+  OS/2 can be used)
+* Independent volume control for audio clips played by this
+  application (distinct from the global system volume control)
+* Individual settings for each IM session
+* Simultaneous multiple logins for multiple AOL screen names
+* Buddy List retrieval from AOL servers
+* Send and receive plain text messages
+* Buddy List icons based on user status
+* Buddy List filtering based on user status
+* Fly-over status containing buddy information on Buddy List
+* Automatic retrieval of user profiles and away messages
+* Drag-n-drop font and color support to customize most windows
+* Idle time detection and reporting
+* Ability to assign your own aliases for user screen names
+* Ability to add and remove buddies on the local buddy list
+* Secure MD5 encrypted login
+* User profile support
+* Away message support
+* Automatic login of one or more sessions on startup
+* Understands typing notifications sent out by other clients
+* Optionally sends notifications to your buddies when you are typing
+* Can automatically re-connect when you are disconnected from the server
+* REXX scripting integration (see ReadMe.REXX)
+
+
+Planned features:
+* Deal with all of the above limitations
+* File transfer support
+* Chat room support
+* Buddy Icon support
+* Buddy list management support
+* Full WPS integration (getting rid of the session manager)
+* User-definable macros for use in IM windows
+* CMD shell scripts tied to IM events
+* Named pipe sending and receiving of IMs
+* URL highlighting and ability to launch web browser from received IMs
+* Option to disallow the window focus to be "stolen" if you are using
+  another application and a buddy sends you an instant message
+* Ability to select which audio devices to use (if you have more than
+  one sound chipset/card)
+
+
+System requirements:
+* Warp 4, Warp 4.51, Warp 4.52, eCS 1.0 or later
+  (Warp 3 may work, but has not been tested.)
+* TCP/IP networking support
+
+
+To use:
+
+Simply unzip the archive and you're ready to run.
+
+On startup, you will see the Session Manager window.  Click the "Create"
+button.  You will then be asked for your AOL user ID ("screen name") and
+password.  Enter them and click "Create Session".  Back in the Session Manager
+window, double click the newly created session object, or highlight it and
+click the "Start" button.
+
+If your login was successful, you will see a new "Buddy List" window pop up,
+which will contain a list of all of the buddies that have been registered
+with the AOL server.
+
+Any messages that are sent to you from your buddies will pop up in a separate
+window.  To respond to your buddies, simply type your response in the window
+that pops up and press Enter.  To initiate messaging with a buddy,
+double-click the buddy from the Buddy List.  Then type your initial message
+and press Enter.
+
+To get information about a particular buddy, move the mouse over their name
+and leave it for .5 seconds.  This will show their actual AOL account name,
+alias, online time, idle time, profile, and away message.
+
+To filter your Buddy List, click the icon at the bottom of the Buddy List
+window corresponding to the group that you don't want to see.  For example,
+to remove your offline buddies, click on the "disconnected" icon.  To add
+them back to the view, click the same button again.
+
+To change your sound assignments select "Settings" from the "Session" or
+"Global" menus (as desired), select the event, and enter the name of the
+audio clip (absolute path or relative path from the working directory) to
+play during that event.  Settings changes will become active after closing
+the Settings window.
+
+To assign an alias to a buddy's screen name, use the same key/mouse
+combination that you'd use to rename a file in the WPS.  Typically, this
+is ALT + Mouse Button 1.  Another way of assigning an alias is by right-
+clicking the buddy list and selecting "Set Alias" from the popup menu.
+
+To add a buddy to your buddy list, either have them send you a message
+(and they will be added automatically) or right-click on the buddy list
+window's background and select "Add buddy".  Then type in the screen
+name (or UIN for ICQ) of the user your wish to add.
+
+If you wish to change fonts or colors on the Session Manager or Buddy List
+windows, open up the OS/2 Font Palette or Mixed/Solid Color Palette, and
+drag and drop them onto the appropriate windows.  Your changes will be
+saved for these two windows only so far.
+
+For more thorough documentation, please visit the Mr. Message homepage here:
+http://mamodeo.dyndns.org/mrmessage
+
+
+Notes about security:
+
+This client now supports a secure MD5 encrypted login sequence.  This new
+login method involves the server sending a hash key to the client, the
+client encrypting the password with it, and the server doing the same and
+comparing the results.  Someone monitoring this login sequence will still
+be able to obtain authorization for the current session if they can send
+the correct sequence numbers in their data (which is difficult), but cannot
+easily or reliably figure out your password for use in future sessions.
+
+The older "XOR-hash" login procedure is no longer used or supported by this
+client.  It involves an easily-reversible process whereby someone
+eavesdropping on your connection can easily obtain your password.
+
+Please note that the password for any session you create with Mr. Message
+is stored on your local system.  This password is stored in your
+MRMESSAGE.INI file using the same weak encryption used for the "old" login
+method.  Please make sure to keep this file safe from outsiders if you value
+your security.
+
+A great deal of care has been taken in this code to avoid "buffer overruns"
+and other kinds of errors associated with hackers sending bad data to your
+client.  I'm far from infallible, but the code was written with these
+concerns at the forefront of my mind.
+
+This application makes no attempts to "call home", gather statistics, or
+download advertisements to your system, and it never will.  Anyone who
+doesn't believe that can feel free to examine the source code, included
+in this distribution.
+
+
+Reporting a problem:
+
+To report a problem, please verify the exact steps required to reproduce the
+problem.  You can capture useful debug information by running Mr. Message
+from the command line as follows:
+
+mrmessage -debug
+
+This will create a file named "debug.log" in the working directory.  Please
+e-mail this file, with a description of what you did to produce the problem,
+to martyamodeo@comcast.net.
+
+Please note that the debug output that you are capturing will quite likely
+contain some of your personal information (buddy screen names, your screen
+name).  If you do not wish to send all of this information, feel free to edit
+it before sending it to me.  Just let me know what you have removed.
+
+
+Requesting a feature:
+
+If you have any suggestions to improve usability or functionality, I'd be
+glad to hear them.  Check the "Planned features" section of this document, and
+if your ideas are not mentioned there, send me (martyamodeo@comcast.net) an
+e-mail with your ideas.
+
+
+Acknowledgements and credits:
+* MAJOR THANKS to Jan van Wijk for helping me recover most of my system
+  when my partition tables were destroyed.  Without him, this project
+  would have died.
+* Thanks to Aaron Lawrence for saving me months of work by allowing me to
+  use his excellent rich text viewer widget.
+* Thanks to the OpenWatcom team for taking a good compiler for OS/2 and
+  making it work in a stable and reliable way.
+* Thanks to Michal Necasek for his help with OpenWatcom and for his initial
+  testing help.
+* Thanks to the authors of Kopete and gAIM, for providing working
+  applications that I can use for guidance.
+* Special thanks to Alexandr Shutko, who provided the most complete,
+  well-organized, and up-to-date OSCAR protocol documentation on the 'net.
+* Thanks to AOL for removing their absurd requirement that you use an AIM
+  client written by them.
+* Thanks to all of you OS/2 users out there who are testing this for me and
+  providing valuable feedback.
+* Thanks to L. Peter Deutsch for his open source implementation of RFC 1321
+  (MD5 encryption), which is used, unmodified from its original source, in
+  this program.
+* Thanks to Martin Iturbide for the initial WarpIn installation scripts.
+
+
+Terms of usage and license:
+
+This application is available on an as-is basis, with no warranty or guarantee
+of suitability for any purpose.
+
+This application can be freely distributed with or without source code.  If
+no source code is provided in the distribution of this application, it is the
+responsibility of the distributor to ensure that users have access to the
+source code by either providing an up-to-date web URL or by copying and
+hosting said source code themselves.  This application may not be sold under
+any circumstances.  It may, however, be included as "bundled" software in a
+commercial distribution if so desired, so long as proper credit is given to
+the original author and the source code is made available as described above.
+
+(Note that "bundled" software here refers to software that is included with
+another product for the convenience of the user.  Said product must have its
+own inherent value proposition, separate and distinct from that of this
+application.)
+
+The source code can be modified as desired, though as a courtesy to the
+original author, I'd appreciate hearing about any improvements that you've
+made so that they can be included in the primary distribution.  If you have
+any question about fair usage of this application, feel free to contact me
+directly.

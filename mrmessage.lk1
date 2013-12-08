@@ -1,0 +1,3 @@
+FIL md5.obj,buddy.obj,compatibility.obj,errors.obj,mrmessage.obj,oscardata.obj,oscarprotocol.obj,oscarrx.obj,oscarsession.obj,oscartx.obj,sessionmanager.obj
+
+LIBR mrmessage.imp
